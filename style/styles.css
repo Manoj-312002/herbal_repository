@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+    font-family:'Open Sans'
+}
+html{
+    overflow-x:hidden ;
+}
+body{
+    background-color:white;
+}
+
+.head{
+    background-color: black;
+    color:white;
+    display: grid;
+    grid-template-columns: 20fr 3fr;
+    font-size: .8em;
+    z-index:1;
+    position:sticky;
+    top:0px;
+    opacity:80%;
+}
+
+.head h1{
+    font-size: 1.8em;
+    margin:14px;
+}
+.a-l{
+    border:1px solid white;
+    background:black;
+    color:white;
+    margin-top:10px;
+    width:100px;
+    height:40px;
+    transform:translate(5px,0px)
+}
+.head a{
+    color:white;
+    padding:10px;
+    text-decoration: none;
+    transition:all .3s ease-in;
+}
+.head a:hover{
+    color:grey;
+}
+
+
+.line{
+    width:60%;
+    height:5px;
+    background-color: black;
+    margin-bottom:20px;
+    
+}
+.contents{
+    display:grid;
+    grid-template-columns:15fr 5fr;
+    
+}
+
+
+.right{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2px;
+}
+
+
+.right-s{
+    grid-template-rows: 1fr;
+}
+.a-l-s{
+    display: none;
+}
+.nav {
+    padding:15px 0px;    
+}
+
+
+
+
+.container input[type = "submit"]{
+    background-color: black;
+    border: none;
+    color:white;
+    width:80px;
+}
+.like button{
+    margin:0px 40px;
+    width:100px;
+    height: 50px;
+    background:white;
+    border:2px solid black;
+    transition:all .3s ease-in;
+}
+.like button:hover{
+    background-color: black;
+    color:white;
+}
