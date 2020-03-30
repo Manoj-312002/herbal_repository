@@ -86,7 +86,7 @@
                         
                         
                     }else{
-                        $sql = "SELECT * FROM post ORDER BY date";                        
+                        $sql = "SELECT * FROM post ORDER BY date desc";                        
                     };
                     $r = $conn->query($sql);
 
