@@ -195,6 +195,7 @@
 </body>
 
 <script src="./javascript/contents.js"></script>
+<script src="./javascript/parallax.js"></script>
 </html>
 
 

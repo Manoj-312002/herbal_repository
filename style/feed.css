@@ -3,11 +3,16 @@
     padding:80px;
 }
 .card{
+    transform:translate(-600px,0px);
     margin-bottom: 80px;
     background-color: white;
     color:black;
     padding:20px;
     width:100%;   
+    transition:all .8s ease;
+}
+.card-s{
+    transform:none;
 }
 .card h1{
     padding:30px 0px;
@@ -88,7 +93,7 @@
     margin-left:20px;   
 }
 .info-m{
-    display:grid;
+    display:block;
 }
 .contents-m{
     grid-template-columns: 10fr 1fr;
