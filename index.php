@@ -1,0 +1,200 @@
+<?php
+    require 'header.php';
+    
+    if(isset($_POST['passa'])){
+        $user = $_POST['user'];
+        $hash = $_POST['pass'];
+
+        $pass = password_hash($hash, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO user(username,password) VALUES ('$user','$pass');";
+        
+        $query = "SELECT id from user where username = '$user'";
+        $r = $conn->query($query);
+        $row = $r->fetch_assoc();
+        
+        if($row['id']){
+            echo "username exists";
+        }else{
+            if ($conn->query($sql) === TRUE) {
+                $query = "SELECT id from user where username = '$user'";
+                $r = $conn->query($query);
+                $row = $r->fetch_assoc();
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['username'] = $user;
+    
+            }else{
+                echo "record not created";
+            };
+        }
+    }
+
+    
+    elseif(isset($_POST['pass'])){
+        $user = $_POST['user'];
+        $hash = $_POST['pass'];
+
+        $sql = "SELECT id,password FROM user WHERE username='".$user."'";
+        $r = $conn->query($sql);
+
+        if ($r == TRUE) {
+            $row = $r->fetch_assoc();
+
+            if(password_verify($hash, $row['password'])){
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['username'] = $user;
+
+            }else{
+                echo "Wrong password";
+            };
+
+        }else{
+            echo "user does not exist";
+        };
+    }
+
+    elseif(isset($_POST['signout'])){
+        session_destroy();  
+        header('Location: '.$_SERVER['REQUEST_URI']);
+    };
+
+
+    require 'head.php';
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Repository</title>
+    <link rel="stylesheet" href="./style/styles.css"/>
+    <link rel="stylesheet" href="./style/feed.css"/>
+</head>
+<body >
+    
+    <div class="page">
+        <div class="contents">
+            
+            <div class="feed">
+            <form method="post" action="like.php">
+            <?php 
+                    if(isset($_GET['plant'])){
+                        $sql = "SELECT * FROM post WHERE plant = '".$_GET['plant']."' OR head LIKE '%".$_GET['plant']."%'";
+                        
+                        
+                    }else{
+                        $sql = "SELECT * FROM post ORDER BY date";                        
+                    };
+                    $r = $conn->query($sql);
+
+
+                    if ($r->num_rows >0) {
+                        while($row = $r->fetch_assoc()) {
+
+                            if(loggedin()){
+                                if($_SESSION['id'] != $row['userid']){
+                                    
+                                    $sql = "UPDATE stats SET views = views +1 WHERE id = ".$row['id'];
+                                    $conn->query($sql);
+                                };
+                            }
+                        
+                            $query = "SELECT views,likes,dislikes from stats WHERE id =".$row['id'];
+                            $val = $conn->query($query);
+                            
+                            if(!$val){
+                                $a['views'] = 0;
+                                $a['likes'] = 0;
+                                $a['dislikes'] = 0;
+                            }else{
+                                $a = $val->fetch_assoc();
+                            };
+                            echo "
+                            <div class='card' >
+                                <div class='c-head' >
+                                    <p>".substr($row['date'],0,10)."</p>
+                                    <h1 onclick='cardclick(event)'>".$row['head']."</h1>
+                                    <div class='info'><p>".$row['info']."</p></div>
+                                </div>
+                                <img src='".$row['url']."'/>                                
+                                <div class='like'>
+                                     <p>views : ".$a['views']."</p>
+                                     <p></p>";
+
+                            
+                            
+                            if(loggedin() and $row['userid'] != $_SESSION['id']){
+                                echo "
+                                     <p>likes : ".$a['likes']."</p><button type='submit' name='likes' value='".$row['id']."'>Like</button>
+                                     <p>dislikes : ".$a['dislikes']."</p><button type='submit' name='dislikes' value='".$row['id']."'>DisLike </button>
+                                    ";
+                            }else{
+                                echo "
+                                    <p>likes : ".$a['likes']."</p>
+                                    <p>dislikes : ".$a['dislikes']."</p>
+                                ";
+                            };
+
+
+
+                            echo "
+                                </div>
+                            </div>";
+                        };
+
+                    } else {
+                        echo "0 results";
+                    }
+
+                ?>
+                </form>            
+            </div>
+            
+            
+            <div class="side">
+                <div class="container">
+                    <h2>Search</h2>
+                    <div class="line"></div>
+                    <form method="get",action="<?=$_SERVER['PHP_SELF'];?>">
+                        <p>Search any plant name</p>
+                        <input type="text" name='plant' placeholder='search'>
+                        <input type="submit" value="Search"></br></br></br>
+                    </form>
+                    
+                    <h2>Popular</h2>
+                    <div class="line"></div>
+                    <ol>
+                        <?php
+                            $query = "SELECT id from stats ORDER BY likes-dislikes desc";
+                            $r = $conn->query($query);
+                            $i = 5;
+                            if ($r->num_rows >0) {
+
+                                while($row = $r->fetch_assoc() and $i>0) {
+                                    $sql = "SELECT head from post WHERE id =".$row['id'];
+                                    $he = $conn->query($sql);
+                                    $res = $he->fetch_assoc();
+                                    echo "<li>".$res['head']."</li>";
+                                    $i-=1;
+                                };
+                            };
+                        ?>
+                    </ol>
+
+                </div>
+                <button class="open" onclick="cardback()"> < </button>
+            </div>
+            
+        </div>
+        
+
+    </div>
+</body>
+
+<script src="./javascript/contents.js"></script>
+</html>
+
+
