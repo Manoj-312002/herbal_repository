@@ -14,6 +14,7 @@ A lot of foliages and flowers of plants contain medicine which are left  undisco
 ## Explanation :
 
 
+
 ![alt_text](images/image5.png "image_tooltip")
 
 ![alt_text](images/image3.png "image_tooltip")
@@ -78,7 +79,7 @@ It uses angular js form validation techniques
 *   A back button appears on clicking it reverts to previous form
 
 
-![alt_text](images/image5.png "image_tooltip")
+![alt_text](images/image2.png "image_tooltip")
 
 
 ## Create page
