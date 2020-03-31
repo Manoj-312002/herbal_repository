@@ -1,8 +1,6 @@
 # herbal_repository
 
 
-## Abstract :
-
 A lot of foliages and flowers of plants contain medicine which are left  undiscovered or worse not well categorized. This solution would help in integrating all the available information about the herbal benefits of a plant and provide it to the user in the form of posts . Every logged in user would be able to post information regarding the medicine and tag a plant name. All the posts would be curated with the number of likes and dislikes. There would be a general feed which gets sorted according to number of page visits and number of likes. An user would also be able to make a query about a specific plant and get all posts tagged with that plant.  For logging in every user would have a password The hashed password would be stored in a database.The user will be able to delete or update the post anytime which would be stored in MYSQL database,  php would be used to make connection to database and authentication , the  frontend would be built using javascript,html,css and angular js.  
 
 ## Website :
@@ -119,7 +117,7 @@ It uses angular js form validation techniques
 ## Sql commands 
 
 
-```
+sql```
 
 create table post(id int NOT NULL AUTO_INCREMENT,head varchar(100),url varchar(400),
 userid int NOT NULL,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
