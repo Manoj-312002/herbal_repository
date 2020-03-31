@@ -101,10 +101,13 @@ It uses angular js form validation techniques
 ## Only logged in user can add a like 
 
 
+
 ![alt_text](images/image10.png "image_tooltip")
 
 
 ### Popular show according to likes - dislikes
+
+
 
 
 ![alt_text](images/image8.png "image_tooltip")
