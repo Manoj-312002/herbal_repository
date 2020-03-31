@@ -7,6 +7,7 @@ A lot of foliages and flowers of plants contain medicine which are left  undisco
 
 [https://herbalrepository.000webhostapp.com/](https://herbalrepository.000webhostapp.com/)
 
+
 *   Hosted in 000webhostapp.com
 *   Scale.io database provider 
 
@@ -117,7 +118,7 @@ It uses angular js form validation techniques
 ## Sql commands 
 
 
-sql```
+```sql
 
 create table post(id int NOT NULL AUTO_INCREMENT,head varchar(100),url varchar(400),
 userid int NOT NULL,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -139,5 +140,3 @@ views int DEFAULT 0,FOREIGN KEY(id) REFERENCES post(id));
 
 The given website is created using mysql javascript php and angular js 
 
-
-<!-- Docs to Markdown version 1.0β20 -->
