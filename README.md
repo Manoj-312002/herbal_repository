@@ -14,9 +14,9 @@ A lot of foliages and flowers of plants contain medicine which are left  undisco
 ## Explanation :
 
 
-![alt_text](images/ITE-Mini0.png "image_tooltip")
+![alt_text](images/image5.png "image_tooltip")
 
-![alt_text](images/ITE-Mini1.png "image_tooltip")
+![alt_text](images/image3.png "image_tooltip")
 
 
 The first is the home page 
@@ -28,7 +28,7 @@ The popular section provides the top post which is decided based on number of li
 ### Login Page:
 
 
-![alt_text](images/ITE-Mini2.png "image_tooltip")
+![alt_text](images/image4.png "image_tooltip")
 
 It uses angular js form validation techniques 
 
@@ -37,13 +37,13 @@ It uses angular js form validation techniques
 *   Red colour if wrong ,orange if password is medium and green means ok
 
 
-![alt_text](images/ITE-Mini3.png "image_tooltip")
+![alt_text](images/image14.png "image_tooltip")
 
 
 ### Sign up page:
 
 
-![alt_text](images/ITE-Mini4.png "image_tooltip")
+![alt_text](images/image13.png "image_tooltip")
 
 
 *   Can’t have two users with same username 
@@ -52,20 +52,20 @@ It uses angular js form validation techniques
 ### After logging in the login converts to sign out
 
 
-![alt_text](images/ITE-Mini5.png "image_tooltip")
+![alt_text](images/image7.png "image_tooltip")
 
 
 
 ### Search Result
 
 
-![alt_text](images/ITE-Mini6.png "image_tooltip")
+![alt_text](images/image11.png "image_tooltip")
 
 
 ## Post :
 
 
-![alt_text](images/ITE-Mini7.png "image_tooltip")
+![alt_text](images/image12.png "image_tooltip")
 
 
 *   Every post contains date posted 
@@ -78,13 +78,13 @@ It uses angular js form validation techniques
 *   A back button appears on clicking it reverts to previous form
 
 
-![alt_text](images/ITE-Mini8.png "image_tooltip")
+![alt_text](images/image5.png "image_tooltip")
 
 
 ## Create page
 
 
-![alt_text](images/ITE-Mini9.png "image_tooltip")
+![alt_text](images/image9.png "image_tooltip")
 
 
 *   A user can see all his posts and modify or delete the post 
@@ -94,25 +94,25 @@ It uses angular js form validation techniques
 ## Post page:
 
 
-![alt_text](images/ITE-Mini10.png "image_tooltip")
+![alt_text](images/image6.png "image_tooltip")
 
 
 ## Only logged in user can add a like 
 
 
-![alt_text](images/ITE-Mini11.png "image_tooltip")
+![alt_text](images/image10.png "image_tooltip")
 
 
 ### Popular show according to likes - dislikes
 
 
-![alt_text](images/ITE-Mini12.png "image_tooltip")
+![alt_text](images/image8.png "image_tooltip")
 
 
 ## Hashed password 
 
 
-![alt_text](images/ITE-Mini13.png "image_tooltip")
+![alt_text](images/image1.png "image_tooltip")
 
 
 ## Sql commands 
@@ -130,7 +130,7 @@ create table user(id int NOT NULL AUTO_INCREMENT PRIMARY KEY,username varchar(20
 varchar(255));
 
 create table stats(id int NOT NULL PRIMARY KEY,likes int DEFAULT 0,dislikes int DEFAULT 0,
-views int DEFAULT 0,FOREIGN KEY(id) REFERENCES post(id));
+views int DEFAULT 0,FOREIGN KEY(id) REFERENCES poITEst(id));
 
 
 ```
