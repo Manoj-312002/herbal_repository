@@ -113,12 +113,6 @@ It uses angular js form validation techniques
 ![alt_text](images/image8.png "image_tooltip")
 
 
-## Hashed password 
-
-
-![alt_text](images/image1.png "image_tooltip")
-
-
 ## Sql commands 
 
 
