@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<hrml>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+    }
+    .form{
+        display:grid;
+        height:80vh;
+        justify-content: center;
+        align-content: center;
+    }
+    form {
+        margin:30px;
+    }
+    form input{
+        
+        height:40px;
+        border:none;
+        border-bottom: 1px solid black;
+        margin-bottom:20px;
+        width:290px;
+    }
+    .head {
+        padding:20px;
+        font-size:2em;
+        background-color: black;
+        color:white;
+    }
+
+    .sub{
+        padding:10px;
+        height:40px;
+        width:100px;
+        border:none;
+        background-color:black;
+        color:white;
+        margin:20px;
+    }
+
+</style>
+<body>
+    <div class="head">Online Test </div>
+    <form  class ='form' action = 'test.php' method='post'>
+        Name </br> <input name='name' > </br>
+        Registration No </br> <input name='regno'>
+        <input name='hi' value ='val' type='checkbox'>
+        <input class='sub' type= 'submit'>
+
+    </form>    
+</body>
+</html>
