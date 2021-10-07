@@ -128,7 +128,7 @@ create table user(id int NOT NULL AUTO_INCREMENT PRIMARY KEY,username varchar(20
 varchar(255));
 
 create table stats(id int NOT NULL PRIMARY KEY,likes int DEFAULT 0,dislikes int DEFAULT 0,
-views int DEFAULT 0,FOREIGN KEY(id) REFERENCES poITEst(id));
+views int DEFAULT 0,FOREIGN KEY(id) REFERENCES post(id));
 
 
 ```
