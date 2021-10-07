@@ -117,6 +117,8 @@ It uses angular js form validation techniques
 
 
 ```sql
+create table user(id int NOT NULL AUTO_INCREMENT PRIMARY KEY,username varchar(20),password 
+varchar(255));
 
 create table post(id int NOT NULL AUTO_INCREMENT,head varchar(100),url varchar(400),
 userid int NOT NULL,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -124,12 +126,8 @@ info varchar(1000),plant varchar(30),PRIMARY KEY(id),FOREIGN KEY(userid) REFEREN
 user(id));
 
 
-create table user(id int NOT NULL AUTO_INCREMENT PRIMARY KEY,username varchar(20),password 
-varchar(255));
-
 create table stats(id int NOT NULL PRIMARY KEY,likes int DEFAULT 0,dislikes int DEFAULT 0,
 views int DEFAULT 0,FOREIGN KEY(id) REFERENCES post(id));
-
 
 ```
 
