@@ -5,7 +5,7 @@ A lot of foliages and flowers of plants contain medicine which are left  undisco
 
 ## Website :
 
-[https://herbalrepository.000webhostapp.com/](https://herbalrepository.000webhostapp.com/)
+[https://herbal-repository.000webhostapp.com/index.php](https://herbal-repository.000webhostapp.com/index.php)
 
 
 *   Hosted in 000webhostapp.com
